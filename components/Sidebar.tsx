@@ -2,6 +2,7 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import Box from "./Box";
 interface SidebarProps {
     children: React.ReactNode;
 }
@@ -39,7 +40,9 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                 p-2
             "
             >
-
+                <Box>
+                    side bsr navigation
+                </Box>
             </div>
         </div>
     )
