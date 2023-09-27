@@ -31,8 +31,12 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     ], [pathname]);
     return (
 
+<<<<<<< HEAD
         <div className="flex 
         h-full">
+=======
+        <div className="flex h-full">
+>>>>>>> b6453fd63b7e4c27dc016cab86411923a7d42167
             <div
                 className="
                 hidden 
@@ -56,9 +60,12 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
                     <Library />
                 </Box>
             </div>
+<<<<<<< HEAD
             <main className="h-full flex-1 overflow-y-auto py-2">
                 {children}
             </main>
+=======
+>>>>>>> b6453fd63b7e4c27dc016cab86411923a7d42167
         </div>
     )
 }
