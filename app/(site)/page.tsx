@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Header from "@/components/Header";
+import ListItem from '@/components/ListItem';
 
 export default function Home() {
     return (
@@ -34,7 +35,11 @@ export default function Home() {
               mt-4
             "
                     >
-
+                        <ListItem
+                            name="Liked Songs"
+                            image="/images/liked.png"
+                            href="liked"
+                        />
                     </div>
                 </div>
             </Header>
