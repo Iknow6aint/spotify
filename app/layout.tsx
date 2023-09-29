@@ -1,5 +1,7 @@
 import Sidebar from '@/components/Sidebar'
 import './globals.css'
+import SupabaseProvider from '@/providers/SupabaseProvider'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -18,10 +20,14 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Sidebar>
-                    {children}
-                </Sidebar>
+                <SupabaseProvider>
+
+                    <Sidebar>
+                        {children}
+                    </Sidebar>
+                </SupabaseProvider>
+
             </body>
-        </html>
+        </html >
     )
 }
