@@ -24,7 +24,7 @@ const ModalProvider: React.FC<ModalProviderProps> = ({
 
     return (
         <>
-            modals
+
         </>
     );
 }
