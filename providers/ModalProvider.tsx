@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { ProductWithPrice } from "@/types";
 import Modal from "@/components/Modal";
+import AuthModal from "@/components/AuthModal";
 
 interface ModalProviderProps {
     // products: false;
@@ -25,7 +26,7 @@ const ModalProvider: React.FC<ModalProviderProps> = ({
 
     return (
         <>
-            {/* <Modal /> */}
+            <AuthModal />
         </>
     );
 }
