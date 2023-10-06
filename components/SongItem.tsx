@@ -9,17 +9,18 @@ import PlayButton from "./PlayButton";
 
 interface SongItemProps {
     data: Song;
-    // onClick: (id: string) => void;
+    onClick: (id: string) => void;
 }
 
 const SongItem: React.FC<SongItemProps> = ({
     data,
+    onClick
 }) => {
-    // const imagePath = useLoadImage(data);
+    const imagePath = useLoadImage(data);
 
     return (
         <div
-            //   onClick={() => onClick(data.id)} 
+            onClick={() => onClick(data.id)}
             className="
         relative 
         group 
@@ -49,7 +50,7 @@ const SongItem: React.FC<SongItemProps> = ({
             >
                 <Image
                     className="object-cover"
-                    src={'/images/music-placeholder.png'}
+                    src={imagePath || '/images/music-placeholder.png'}
                     fill
                     alt="Image"
                 />
