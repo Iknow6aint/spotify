@@ -24,15 +24,13 @@ export default function RootLayout({
             <body className={inter.className}>
                 <SupabaseProvider>
                     <UserProvider>
-                        <ModalProvider>
-                            <Sidebar>
-                                {children}
-                            </Sidebar>
-                        </ModalProvider>
+                        <ModalProvider />
+                        <Sidebar>
+                            {children}
+                        </Sidebar>
 
                     </UserProvider>
                 </SupabaseProvider>
-
             </body>
         </html >
     )
