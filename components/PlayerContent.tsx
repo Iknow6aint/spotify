@@ -1,6 +1,6 @@
 "use client";
 
-import useSound from "use-sound";
+// import useSound from 'use-sound';
 import { useEffect, useState } from "react";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
@@ -30,73 +30,73 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     const Icon = isPlaying ? BsPauseFill : BsPlayFill;
     const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
 
-    const onPlayNext = () => {
-        if (player.ids.length === 0) {
-            return;
-        }
+    // const onPlayNext = () => {
+    //     if (player.ids.length === 0) {
+    //         return;
+    //     }
 
-        const currentIndex = player.ids.findIndex((id) => id === player.activeId);
-        const nextSong = player.ids[currentIndex + 1];
+    //     const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    //     const nextSong = player.ids[currentIndex + 1];
 
-        if (!nextSong) {
-            return player.setId(player.ids[0]);
-        }
+    //     if (!nextSong) {
+    //         return player.setId(player.ids[0]);
+    //     }
 
-        player.setId(nextSong);
-    }
+    //     player.setId(nextSong);
+    // }
 
-    const onPlayPrevious = () => {
-        if (player.ids.length === 0) {
-            return;
-        }
+    // const onPlayPrevious = () => {
+    //     if (player.ids.length === 0) {
+    //         return;
+    //     }
 
-        const currentIndex = player.ids.findIndex((id) => id === player.activeId);
-        const previousSong = player.ids[currentIndex - 1];
+    //     const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    //     const previousSong = player.ids[currentIndex - 1];
 
-        if (!previousSong) {
-            return player.setId(player.ids[player.ids.length - 1]);
-        }
+    //     if (!previousSong) {
+    //         return player.setId(player.ids[player.ids.length - 1]);
+    //     }
 
-        player.setId(previousSong);
-    }
+    //     player.setId(previousSong);
+    // }
 
-    const [play, { pause, sound }] = useSound(
-        songUrl,
-        {
-            volume: volume,
-            onplay: () => setIsPlaying(true),
-            onend: () => {
-                setIsPlaying(false);
-                onPlayNext();
-            },
-            onpause: () => setIsPlaying(false),
-            format: ['mp3']
-        }
-    );
+    // const [play, { pause, sound }] = useSound(
+    //     songUrl,
+    //     {
+    //         volume: volume,
+    //         onplay: () => setIsPlaying(true),
+    //         onend: () => {
+    //             setIsPlaying(false);
+    //             onPlayNext();
+    //         },
+    //         onpause: () => setIsPlaying(false),
+    //         format: ['mp3']
+    //     }
+    // );
 
-    useEffect(() => {
-        sound?.play();
+    // useEffect(() => {
+    //     sound?.play();
 
-        return () => {
-            sound?.unload();
-        }
-    }, [sound]);
+    //     return () => {
+    //         sound?.unload();
+    //     }
+    // }, [sound]);
 
-    const handlePlay = () => {
-        if (!isPlaying) {
-            play();
-        } else {
-            pause();
-        }
-    }
+    // const handlePlay = () => {
+    //     if (!isPlaying) {
+    //         play();
+    //     } else {
+    //         pause();
+    //     }
+    // }
 
-    const toggleMute = () => {
-        if (volume === 0) {
-            setVolume(1);
-        } else {
-            setVolume(0);
-        }
-    }
+    // const toggleMute = () => {
+    //     if (volume === 0) {
+    //         setVolume(1);
+    //     } else {
+    //         setVolume(0);
+    //     }
+    // }
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 h-full">
@@ -118,7 +118,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           "
             >
                 <div
-                    onClick={handlePlay}
+                    onClick={() => { }}
                     className="
               h-10
               w-10
@@ -148,7 +148,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           "
             >
                 <AiFillStepBackward
-                    onClick={onPlayPrevious}
+                    onClick={() => { }}
                     size={30}
                     className="
               text-neutral-400 
@@ -158,7 +158,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             "
                 />
                 <div
-                    onClick={handlePlay}
+                    onClick={() => { }}
                     className="
               flex 
               items-center 
@@ -174,7 +174,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
                     <Icon size={30} className="text-black" />
                 </div>
                 <AiFillStepForward
-                    onClick={onPlayNext}
+                    onClick={() => { }}
                     size={30}
                     className="
               text-neutral-400 
@@ -188,7 +188,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             <div className="hidden md:flex w-full justify-end pr-2">
                 <div className="flex items-center gap-x-2 w-[120px]">
                     <VolumeIcon
-                        onClick={toggleMute}
+                        onClick={() => { }}
                         className="cursor-pointer"
                         size={34}
                     />
