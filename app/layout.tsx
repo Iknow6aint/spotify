@@ -1,6 +1,7 @@
 import Sidebar from '@/components/Sidebar'
 import './globals.css'
 import SupabaseProvider from '@/providers/SupabaseProvider'
+import getSongsByUserId from '@/actions/getSongsByUserId'
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -14,12 +15,13 @@ export const metadata: Metadata = {
     title: 'Spotify',
     description: 'Listen to music',
 }
-
-export default function RootLayout({
+export const revalidate = 0;
+export default async function RootLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
+    const userSongs = await getSongsByUserId();
     return (
         <html lang="en">
             <body className={inter.className}>
@@ -27,7 +29,7 @@ export default function RootLayout({
                 <SupabaseProvider>
                     <UserProvider>
                         <ModalProvider />
-                        <Sidebar>
+                        <Sidebar songs={userSongs}>
                             {children}
                         </Sidebar>
 
