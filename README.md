@@ -56,7 +56,7 @@ STRIPE_WEBHOOK_SECRET=
 ```
 
 ### Add SQL Tables
-Use `database.sql` file, create songs and liked_songs table (there is a video tutorial)
+You can find these tables inside `db` folder of this project or you can create them manually from [here]
 
 ### Start the app
 
